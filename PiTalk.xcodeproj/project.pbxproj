@@ -12,6 +12,7 @@
 		A9187F4E1F8EA4BC00E2CE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9187F4C1F8EA4BC00E2CE4C /* Main.storyboard */; };
 		A9187F501F8EA4BC00E2CE4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9187F4F1F8EA4BC00E2CE4C /* Assets.xcassets */; };
 		A9187F531F8EA4BC00E2CE4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9187F511F8EA4BC00E2CE4C /* LaunchScreen.storyboard */; };
+		A9187F5D1F8EB0BB00E2CE4C /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A9187F4F1F8EA4BC00E2CE4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9187F521F8EA4BC00E2CE4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9187F541F8EA4BC00E2CE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				A9187F481F8EA4BC00E2CE4C /* AppDelegate.swift */,
 				A9187F4A1F8EA4BC00E2CE4C /* ViewController.swift */,
+				A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */,
 				A9187F4C1F8EA4BC00E2CE4C /* Main.storyboard */,
 				A9187F4F1F8EA4BC00E2CE4C /* Assets.xcassets */,
 				A9187F511F8EA4BC00E2CE4C /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9187F4B1F8EA4BC00E2CE4C /* ViewController.swift in Sources */,
+				A9187F5D1F8EB0BB00E2CE4C /* Sender.swift in Sources */,
 				A9187F491F8EA4BC00E2CE4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +281,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D84KDEPN2N;
 				INFOPLIST_FILE = PiTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D84KDEPN2N;
 				INFOPLIST_FILE = PiTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
