@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBOutlet weak var targetHostName: UITextField!
 	@IBOutlet weak var connectButton: UIButton!
 
 	@IBOutlet weak var commandView: UIView!
 	@IBOutlet weak var commandField: UITextField!
-
+	@IBOutlet weak var responseView: UITextView!
+	
 	let targetPort = Sender()
 	var isConnected = false
 	
@@ -43,6 +44,8 @@ class ViewController: UIViewController {
 			connectButton.setTitle( "Connect", for:  .normal )
 			targetHostName.isEnabled = true
 			commandView.isHidden = true
+			commandField.text = ""
+			responseView.text = ""
 		} else {
 			if targetHostName.text!.count >= 0 {
 				print( "\nConnecting to host \(targetHostName.text!)" )
@@ -68,6 +71,16 @@ class ViewController: UIViewController {
 			let reply = targetPort.sendPi( "blinkstop\n" )
 			print( "\nSent blinkstop, got \(reply)" )
 		}
+	}
+
+	
+	// MARK: - UITextFieldDelegate
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool  {	// called when 'return' key pressed. return NO to ignore.
+	
+		guard let commandString = textField.text else { return false }
+		let returnString = targetPort.sendPi( commandString )
+		responseView.text = returnString
+		return true
 	}
 
 }
