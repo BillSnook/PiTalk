@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 	@IBAction func doConnect(_ sender: UIButton) {
 		
-		if isConnected {
+		if isConnected {			// If isConnected, we must be disconnecting
 			print( "\nDisconnecting from host \(targetHostName.text!)" )
 			targetPort.doBreakConnection()
 			isConnected = false
@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 			commandView.isHidden = true
 			commandField.text = ""
 			responseView.text = ""
-		} else {
+		} else {					// Else we must be connecting
 			if targetHostName.text!.count >= 0 {
 				print( "\nConnecting to host \(targetHostName.text!)" )
 				isConnected = targetPort.doMakeConnection( to: targetHostName.text!, at: 5555 )
