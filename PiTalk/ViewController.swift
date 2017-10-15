@@ -28,11 +28,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		
 		commandView.isHidden = true
 		isConnected = false
+		//Looks for single or multiple taps
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard) )
+		//Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+		//tap.cancelsTouchesInView = false
+		view.addGestureRecognizer(tap)
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
+	}
+
+	//Calls this function when the tap is recognized.
+	@objc func dismissKeyboard() {
+		//Causes the view (or one of its embedded text fields) to resign the first responder status.
+		view.endEditing(true)
 	}
 
 	@IBAction func doConnect(_ sender: UIButton) {
@@ -78,8 +89,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool  {	// called when 'return' key pressed. return NO to ignore.
 	
 		guard let commandString = textField.text else { return false }
-		let returnString = targetPort.sendPi( commandString )
+		let returnString = targetPort.sendPi( commandString + "\n" )
 		responseView.text = returnString
+		textField.text = ""
+		textField.resignFirstResponder()
 		return true
 	}
 
