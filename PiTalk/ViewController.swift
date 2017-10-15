@@ -74,6 +74,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		if isConnected {
 			let reply = targetPort.sendPi( "blink\n" )
 			print( "\nSent blink, got \(reply)" )
+			responseView.text = reply
 		}
 	}
 	
@@ -81,6 +82,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		if isConnected {
 			let reply = targetPort.sendPi( "blinkstop\n" )
 			print( "\nSent blinkstop, got \(reply)" )
+			responseView.text = reply
 		}
 	}
 

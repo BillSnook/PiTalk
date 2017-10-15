@@ -111,14 +111,14 @@ class Sender {
 		let sndLen = write( socketfd, &writeBuffer, Int(len) )
 		if ( sndLen < 0 ) {
 			print( "\n\nERROR writing to socket" )
-			return ""
+			return "ERROR writing to socket"
 		}
 
 		var readBuffer: [CChar] = [CChar](repeating: 0, count: 256)
 		let rcvLen = read( socketfd, &readBuffer, 255 )
 		if (rcvLen < 0) {
 			print( "\n\nERROR reading from socket" )
-			return ""
+			return "ERROR reading from socket"
 		}
 		return String( cString: readBuffer )
 	}
