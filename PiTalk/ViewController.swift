@@ -70,9 +70,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
+	@IBAction func okCmd(_ sender: UIButton) {
+		if isConnected {
+			let reply = targetPort.sendPi( "ok" )
+			print( "\nSent ok, got \(reply)" )
+			responseView.text = reply
+		}
+	}
+	
+	@IBAction func helloCmd(_ sender: UIButton) {
+		if isConnected {
+			let reply = targetPort.sendPi( "hello" )
+			print( "\nSent hello, got \(reply)" )
+			responseView.text = reply
+		}
+	}
+	
 	@IBAction func blinkCmd(_ sender: UIButton) {
 		if isConnected {
-			let reply = targetPort.sendPi( "blink\n" )
+			let reply = targetPort.sendPi( "blink" )
 			print( "\nSent blink, got \(reply)" )
 			responseView.text = reply
 		}
@@ -80,7 +96,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBAction func unblinkCmd(_ sender: UIButton) {
 		if isConnected {
-			let reply = targetPort.sendPi( "blinkstop\n" )
+			let reply = targetPort.sendPi( "blinkstop" )
 			print( "\nSent blinkstop, got \(reply)" )
 			responseView.text = reply
 		}
@@ -91,7 +107,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool  {	// called when 'return' key pressed. return NO to ignore.
 	
 		guard let commandString = textField.text else { return false }
-		let returnString = targetPort.sendPi( commandString + "\n" )
+		let returnString = targetPort.sendPi( commandString )
 		responseView.text = returnString
 		textField.text = ""
 		textField.resignFirstResponder()

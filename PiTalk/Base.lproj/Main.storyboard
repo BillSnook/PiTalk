@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,11 +76,11 @@
                                             <constraint firstAttribute="width" constant="130" id="UF0-f5-4Wn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Unblink">
+                                        <state key="normal" title="hello">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="unblinkCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rdW-PX-6BD"/>
+                                            <action selector="helloCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2W-st-rnx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hy0-Jk-S5S">
@@ -91,25 +91,59 @@
                                             <constraint firstAttribute="height" constant="44" id="sNu-ji-Dvd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="ok">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="okCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pd4-0T-fse"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBm-WR-UZd">
+                                        <rect key="frame" x="158" y="274" width="130" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.49335106379999999" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Gv6-fM-LXT"/>
+                                            <constraint firstAttribute="width" constant="130" id="rpI-QN-ATh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Unblink">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="unblinkCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5QG-ok-aRe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znA-Eg-zGp">
+                                        <rect key="frame" x="0.0" y="274" width="130" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.49335106379999999" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ERb-y2-oAP"/>
+                                            <constraint firstAttribute="width" constant="130" id="V3e-dt-QHD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Blink">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="blinkCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnb-UB-jeP"/>
+                                            <action selector="blinkCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTH-gZ-Idz"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="a3Y-SW-aqC" firstAttribute="leading" secondItem="5i1-fo-GY6" secondAttribute="leading" id="4iv-pf-uJh"/>
+                                    <constraint firstAttribute="trailing" secondItem="gBm-WR-UZd" secondAttribute="trailing" id="A2W-04-JTS"/>
                                     <constraint firstAttribute="trailing" secondItem="dOc-5X-U7O" secondAttribute="trailing" id="EHS-Xg-aML"/>
                                     <constraint firstItem="Hy0-Jk-S5S" firstAttribute="leading" secondItem="5i1-fo-GY6" secondAttribute="leading" id="MeA-OZ-Hen"/>
+                                    <constraint firstItem="gBm-WR-UZd" firstAttribute="top" secondItem="nYr-22-KYY" secondAttribute="bottom" constant="14" id="Qwn-yU-3Rf"/>
                                     <constraint firstItem="a3Y-SW-aqC" firstAttribute="top" secondItem="dOc-5X-U7O" secondAttribute="bottom" constant="8" id="T3M-wf-whV"/>
                                     <constraint firstAttribute="trailing" secondItem="a3Y-SW-aqC" secondAttribute="trailing" id="U8o-PW-0vK"/>
                                     <constraint firstItem="dOc-5X-U7O" firstAttribute="top" secondItem="5i1-fo-GY6" secondAttribute="top" constant="8" id="ZJd-CJ-F51"/>
                                     <constraint firstItem="Hy0-Jk-S5S" firstAttribute="top" secondItem="a3Y-SW-aqC" secondAttribute="bottom" constant="8" id="jU0-AW-FaZ"/>
                                     <constraint firstAttribute="trailing" secondItem="nYr-22-KYY" secondAttribute="trailing" id="lNb-3d-6X3"/>
+                                    <constraint firstItem="znA-Eg-zGp" firstAttribute="top" secondItem="Hy0-Jk-S5S" secondAttribute="bottom" constant="14" id="np9-se-Nnr"/>
                                     <constraint firstItem="nYr-22-KYY" firstAttribute="top" secondItem="a3Y-SW-aqC" secondAttribute="bottom" constant="8" id="olf-eY-vrS"/>
+                                    <constraint firstItem="znA-Eg-zGp" firstAttribute="leading" secondItem="5i1-fo-GY6" secondAttribute="leading" id="qbF-V0-faw"/>
                                     <constraint firstItem="dOc-5X-U7O" firstAttribute="leading" secondItem="5i1-fo-GY6" secondAttribute="leading" id="rGO-Kk-Pj1"/>
                                 </constraints>
                             </view>

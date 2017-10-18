@@ -104,9 +104,10 @@ class Sender {
 	
 	func sendPi( _ message: String ) -> String {
 		
+		let command = message + "\n"
 		guard socketConnected else { return "Socket is not connected" }
 		var writeBuffer: [CChar] = [CChar](repeating: 0, count: 256)
-		strcpy( &writeBuffer, message )
+		strcpy( &writeBuffer, command )
 		let len = strlen( &writeBuffer )
 		let sndLen = write( socketfd, &writeBuffer, Int(len) )
 		if ( sndLen < 0 ) {
