@@ -33,7 +33,7 @@ class Sender {
 
 	func doMakeConnection( to: String, at: UInt16 ) -> Bool {
 		
-		socketfd = socket( AF_INET, SOCK_STREAM, 0 )
+		socketfd = socket( AF_INET, SOCK_STREAM, 0 )		// ipv4, tcp
 
 		guard let targetAddr = doLookup( name: to ) else {
 			print( "\nLookup failed for \(to)" )
