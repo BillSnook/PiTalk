@@ -13,10 +13,39 @@
 		A9187F501F8EA4BC00E2CE4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9187F4F1F8EA4BC00E2CE4C /* Assets.xcassets */; };
 		A9187F531F8EA4BC00E2CE4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9187F511F8EA4BC00E2CE4C /* LaunchScreen.storyboard */; };
 		A9187F5D1F8EB0BB00E2CE4C /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */; };
+		A9EDF2011F9F91430020F3F5 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF2001F9F91430020F3F5 /* IntentHandler.swift */; };
+		A9EDF2061F9F91430020F3F5 /* PiCommandExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9EDF1FE1F9F91430020F3F5 /* PiCommandExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A9EDF20D1F9F92100020F3F5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF20B1F9F92100020F3F5 /* Contact.swift */; };
+		A9EDF20E1F9F92100020F3F5 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF20C1F9F92100020F3F5 /* ContactManager.swift */; };
+		A9EDF2111F9F92970020F3F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A9EDF2031F9F91430020F3F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9187F3D1F8EA4BC00E2CE4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9EDF1FD1F9F91430020F3F5;
+			remoteInfo = PiCommandExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A9EDF2051F9F91430020F3F5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A9EDF2061F9F91430020F3F5 /* PiCommandExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		A9187F451F8EA4BC00E2CE4C /* PiTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9187F451F8EA4BC00E2CE4C /* PiCommand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiCommand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9187F481F8EA4BC00E2CE4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9187F4A1F8EA4BC00E2CE4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A9187F4D1F8EA4BC00E2CE4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +53,13 @@
 		A9187F521F8EA4BC00E2CE4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9187F541F8EA4BC00E2CE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		A9EDF1FE1F9F91430020F3F5 /* PiCommandExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PiCommandExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9EDF2001F9F91430020F3F5 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		A9EDF2021F9F91430020F3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9EDF20A1F9F91690020F3F5 /* PiCommand.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PiCommand.entitlements; sourceTree = "<group>"; };
+		A9EDF20B1F9F92100020F3F5 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		A9EDF20C1F9F92100020F3F5 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
+		A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,28 +70,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9EDF1FB1F9F91430020F3F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9EDF2111F9F92970020F3F5 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A9187F3C1F8EA4BC00E2CE4C = {
 			isa = PBXGroup;
 			children = (
-				A9187F471F8EA4BC00E2CE4C /* PiTalk */,
+				A9187F471F8EA4BC00E2CE4C /* PiCommand */,
+				A9EDF1FF1F9F91430020F3F5 /* PiCommandExtension */,
 				A9187F461F8EA4BC00E2CE4C /* Products */,
+				A9EDF20F1F9F92910020F3F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		A9187F461F8EA4BC00E2CE4C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9187F451F8EA4BC00E2CE4C /* PiTalk.app */,
+				A9187F451F8EA4BC00E2CE4C /* PiCommand.app */,
+				A9EDF1FE1F9F91430020F3F5 /* PiCommandExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A9187F471F8EA4BC00E2CE4C /* PiTalk */ = {
+		A9187F471F8EA4BC00E2CE4C /* PiCommand */ = {
 			isa = PBXGroup;
 			children = (
+				A9EDF20A1F9F91690020F3F5 /* PiCommand.entitlements */,
 				A9187F481F8EA4BC00E2CE4C /* AppDelegate.swift */,
 				A9187F4A1F8EA4BC00E2CE4C /* ViewController.swift */,
 				A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */,
@@ -64,28 +112,66 @@
 				A9187F511F8EA4BC00E2CE4C /* LaunchScreen.storyboard */,
 				A9187F541F8EA4BC00E2CE4C /* Info.plist */,
 			);
-			path = PiTalk;
+			path = PiCommand;
+			sourceTree = "<group>";
+		};
+		A9EDF1FF1F9F91430020F3F5 /* PiCommandExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDF2001F9F91430020F3F5 /* IntentHandler.swift */,
+				A9EDF20B1F9F92100020F3F5 /* Contact.swift */,
+				A9EDF20C1F9F92100020F3F5 /* ContactManager.swift */,
+				A9EDF2021F9F91430020F3F5 /* Info.plist */,
+			);
+			path = PiCommandExtension;
+			sourceTree = "<group>";
+		};
+		A9EDF20F1F9F92910020F3F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9187F441F8EA4BC00E2CE4C /* PiTalk */ = {
+		A9187F441F8EA4BC00E2CE4C /* PiCommand */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9187F571F8EA4BC00E2CE4C /* Build configuration list for PBXNativeTarget "PiTalk" */;
+			buildConfigurationList = A9187F571F8EA4BC00E2CE4C /* Build configuration list for PBXNativeTarget "PiCommand" */;
 			buildPhases = (
 				A9187F411F8EA4BC00E2CE4C /* Sources */,
 				A9187F421F8EA4BC00E2CE4C /* Frameworks */,
 				A9187F431F8EA4BC00E2CE4C /* Resources */,
+				A9EDF2051F9F91430020F3F5 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9EDF2041F9F91430020F3F5 /* PBXTargetDependency */,
+			);
+			name = PiCommand;
+			productName = PiTalk;
+			productReference = A9187F451F8EA4BC00E2CE4C /* PiCommand.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A9EDF1FD1F9F91430020F3F5 /* PiCommandExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9EDF2071F9F91430020F3F5 /* Build configuration list for PBXNativeTarget "PiCommandExtension" */;
+			buildPhases = (
+				A9EDF1FA1F9F91430020F3F5 /* Sources */,
+				A9EDF1FB1F9F91430020F3F5 /* Frameworks */,
+				A9EDF1FC1F9F91430020F3F5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PiTalk;
-			productName = PiTalk;
-			productReference = A9187F451F8EA4BC00E2CE4C /* PiTalk.app */;
-			productType = "com.apple.product-type.application";
+			name = PiCommandExtension;
+			productName = PiCommandExtension;
+			productReference = A9EDF1FE1F9F91430020F3F5 /* PiCommandExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,10 +186,19 @@
 					A9187F441F8EA4BC00E2CE4C = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
+					};
+					A9EDF1FD1F9F91430020F3F5 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = A9187F401F8EA4BC00E2CE4C /* Build configuration list for PBXProject "PiTalk" */;
+			buildConfigurationList = A9187F401F8EA4BC00E2CE4C /* Build configuration list for PBXProject "PiCommand" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,7 +211,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A9187F441F8EA4BC00E2CE4C /* PiTalk */,
+				A9187F441F8EA4BC00E2CE4C /* PiCommand */,
+				A9EDF1FD1F9F91430020F3F5 /* PiCommandExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +225,13 @@
 				A9187F531F8EA4BC00E2CE4C /* LaunchScreen.storyboard in Resources */,
 				A9187F501F8EA4BC00E2CE4C /* Assets.xcassets in Resources */,
 				A9187F4E1F8EA4BC00E2CE4C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9EDF1FC1F9F91430020F3F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +248,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9EDF1FA1F9F91430020F3F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9EDF20D1F9F92100020F3F5 /* Contact.swift in Sources */,
+				A9EDF20E1F9F92100020F3F5 /* ContactManager.swift in Sources */,
+				A9EDF2011F9F91430020F3F5 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9EDF2041F9F91430020F3F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9EDF1FD1F9F91430020F3F5 /* PiCommandExtension */;
+			targetProxy = A9EDF2031F9F91430020F3F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A9187F4C1F8EA4BC00E2CE4C /* Main.storyboard */ = {
@@ -215,12 +336,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -266,10 +388,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -277,13 +400,15 @@
 		A9187F581F8EA4BC00E2CE4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PiCommand/PiCommand.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D84KDEPN2N;
-				INFOPLIST_FILE = PiTalk/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PiCommand/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiCommand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -293,14 +418,48 @@
 		A9187F591F8EA4BC00E2CE4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PiCommand/PiCommand.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D84KDEPN2N;
-				INFOPLIST_FILE = PiTalk/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PiCommand/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiCommand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A9EDF2081F9F91430020F3F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D84KDEPN2N;
+				INFOPLIST_FILE = PiCommandExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiCommand.PiCommandExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9EDF2091F9F91430020F3F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D84KDEPN2N;
+				INFOPLIST_FILE = PiCommandExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiCommand.PiCommandExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -309,7 +468,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9187F401F8EA4BC00E2CE4C /* Build configuration list for PBXProject "PiTalk" */ = {
+		A9187F401F8EA4BC00E2CE4C /* Build configuration list for PBXProject "PiCommand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9187F551F8EA4BC00E2CE4C /* Debug */,
@@ -318,11 +477,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9187F571F8EA4BC00E2CE4C /* Build configuration list for PBXNativeTarget "PiTalk" */ = {
+		A9187F571F8EA4BC00E2CE4C /* Build configuration list for PBXNativeTarget "PiCommand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9187F581F8EA4BC00E2CE4C /* Debug */,
 				A9187F591F8EA4BC00E2CE4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9EDF2071F9F91430020F3F5 /* Build configuration list for PBXNativeTarget "PiCommandExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9EDF2081F9F91430020F3F5 /* Debug */,
+				A9EDF2091F9F91430020F3F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

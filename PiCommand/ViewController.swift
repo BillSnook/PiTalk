@@ -1,17 +1,19 @@
 //
 //  ViewController.swift
-//  PiTalk
+//  PiCommand
 //
 //  Created by William Snook on 10/11/17.
 //  Copyright © 2017 billsnook. All rights reserved.
 //
 
 import UIKit
+import Intents
 
 class ViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBOutlet weak var targetHostName: UITextField!
 	@IBOutlet weak var connectButton: UIButton!
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 	@IBOutlet weak var commandView: UIView!
 	@IBOutlet weak var commandField: UITextField!
@@ -33,7 +35,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		//Uncomment the line below if you want the tap not not interfere and cancel other interactions.
 		//tap.cancelsTouchesInView = false
 		view.addGestureRecognizer(tap)
-	}
+		
+		activityIndicator.stopAnimating()
+
+		INPreferences.requestSiriAuthorization() { (status) in
+			print( "\nSiri authorization status: \(status)\n")
+		}
+}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -52,19 +60,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
 			print( "\nDisconnecting from host \(targetHostName.text!)" )
 			targetPort.doBreakConnection()
 			isConnected = false
-			connectButton.setTitle( "Connect", for:  .normal )
 			targetHostName.isEnabled = true
+			connectButton.setTitle( "Connect", for:  .normal )
 			commandView.isHidden = true
 			commandField.text = ""
 			responseView.text = ""
 		} else {					// Else we must be connecting
 			if targetHostName.text!.count >= 0 {
 				print( "\nConnecting to host \(targetHostName.text!)" )
-				isConnected = targetPort.doMakeConnection( to: targetHostName.text!, at: 5555 )
-				if isConnected {
-					connectButton.setTitle( "Disconnect", for:  .normal )
-					targetHostName.isEnabled = false
-					commandView.isHidden = false
+				targetHostName.isEnabled = false
+				connectButton.isEnabled = false
+				activityIndicator.startAnimating()
+				let hostName = self.targetHostName.text!
+				DispatchQueue.global( qos: .userInitiated ).async {
+					self.isConnected = self.targetPort.doMakeConnection( to: hostName, at: 5555 )
+					DispatchQueue.main.async {
+						if self.isConnected {
+							self.connectButton.setTitle( "Disconnect", for:  .normal )
+							self.commandView.isHidden = false
+						} else {
+							self.targetHostName.isEnabled = true
+						}
+						self.connectButton.isEnabled = true
+						self.activityIndicator.stopAnimating()
+					}
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  PiTalk
+//  PiCommand
 //
 //  Created by William Snook on 10/11/17.
 //  Copyright © 2017 billsnook. All rights reserved.

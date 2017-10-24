@@ -44,7 +44,7 @@ class Sender {
 		let result = doConnect( targetAddr, port: at )
 		guard result >= 0 else {
 			let strerr = strerror( errno )
-			print( "\nConnect failed, error: \(result) - \(String(describing: strerr))" )
+//			print( "\nConnect failed, error: \(result) - \(String(describing: strerr))" )
 			return false
 		}
 		socketConnected = true
@@ -94,9 +94,9 @@ class Sender {
 				connect( socketfd, $0, serv_addr_len )
 			}
 		}
-//		print( "\nIn getConnection with connectResult: \(connectResult)\n" )
 		if connectResult < 0 {
-			print("\nERROR connecting, errno: \(errno)")
+			let stat = String( describing: strerror( errno ) )
+			print("\nERROR connecting, errno: \(errno), \(stat)")
 		}
 		
 		return connectResult
@@ -111,14 +111,17 @@ class Sender {
 		let len = strlen( &writeBuffer )
 		let sndLen = write( socketfd, &writeBuffer, Int(len) )
 		if ( sndLen < 0 ) {
-			print( "\n\nERROR writing to socket" )
+			let stat = strerror( errno )
+			print( "\n\nERROR writing to socket: \(String( describing: stat ))" )
 			return "ERROR writing to socket"
 		}
 
 		var readBuffer: [CChar] = [CChar](repeating: 0, count: 256)
 		let rcvLen = read( socketfd, &readBuffer, 255 )
 		if (rcvLen < 0) {
-			print( "\n\nERROR reading from socket" )
+			if let stat = strerror( errno ) {
+				print( "\n\nERROR reading from socket:  \(String( describing: stat ))" )
+			}
 			return "ERROR reading from socket"
 		}
 		return String( cString: readBuffer )
