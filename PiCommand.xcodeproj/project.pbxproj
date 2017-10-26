@@ -12,12 +12,13 @@
 		A9187F4E1F8EA4BC00E2CE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9187F4C1F8EA4BC00E2CE4C /* Main.storyboard */; };
 		A9187F501F8EA4BC00E2CE4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9187F4F1F8EA4BC00E2CE4C /* Assets.xcassets */; };
 		A9187F531F8EA4BC00E2CE4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9187F511F8EA4BC00E2CE4C /* LaunchScreen.storyboard */; };
-		A9187F5D1F8EB0BB00E2CE4C /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */; };
 		A9EDF2011F9F91430020F3F5 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF2001F9F91430020F3F5 /* IntentHandler.swift */; };
 		A9EDF2061F9F91430020F3F5 /* PiCommandExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9EDF1FE1F9F91430020F3F5 /* PiCommandExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A9EDF20D1F9F92100020F3F5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF20B1F9F92100020F3F5 /* Contact.swift */; };
 		A9EDF20E1F9F92100020F3F5 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF20C1F9F92100020F3F5 /* ContactManager.swift */; };
 		A9EDF2111F9F92970020F3F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */; };
+		A9EDF27E1FA156F30020F3F5 /* PiTalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */; };
+		A9EDF27F1FA156F30020F3F5 /* PiTalker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9EDF2801FA156F30020F3F5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A9EDF27F1FA156F30020F3F5 /* PiTalker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +72,7 @@
 		A9EDF20B1F9F92100020F3F5 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		A9EDF20C1F9F92100020F3F5 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PiTalker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9EDF27E1FA156F30020F3F5 /* PiTalker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +98,7 @@
 		A9187F3C1F8EA4BC00E2CE4C = {
 			isa = PBXGroup;
 			children = (
+				A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */,
 				A9187F471F8EA4BC00E2CE4C /* PiCommand */,
 				A9EDF1FF1F9F91430020F3F5 /* PiCommandExtension */,
 				A9187F461F8EA4BC00E2CE4C /* Products */,
@@ -145,6 +160,7 @@
 				A9187F421F8EA4BC00E2CE4C /* Frameworks */,
 				A9187F431F8EA4BC00E2CE4C /* Resources */,
 				A9EDF2051F9F91430020F3F5 /* Embed App Extensions */,
+				A9EDF2801FA156F30020F3F5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,7 +259,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9187F4B1F8EA4BC00E2CE4C /* ViewController.swift in Sources */,
-				A9187F5D1F8EB0BB00E2CE4C /* Sender.swift in Sources */,
 				A9187F491F8EA4BC00E2CE4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

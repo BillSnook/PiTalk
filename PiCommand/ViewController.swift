@@ -9,6 +9,8 @@
 import UIKit
 import Intents
 
+import PiTalker
+
 class ViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBOutlet weak var targetHostName: UITextField!

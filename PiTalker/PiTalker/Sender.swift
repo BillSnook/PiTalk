@@ -9,12 +9,12 @@ import Foundation
 import Darwin.C
 
 
-class Sender {
+public class Sender {
 
 	var socketfd: Int32 = 0
 	var socketConnected = false
 
-	init() {
+	public init() {
 	}
 	
 	deinit {
@@ -24,14 +24,14 @@ class Sender {
 		}
 	}
 	
-	func doBreakConnection() {
+	public func doBreakConnection() {
 		if socketConnected {
 			socketConnected = false
 			close( socketfd )
 		}
 	}
 
-	func doMakeConnection( to: String, at: UInt16 ) -> Bool {
+	public func doMakeConnection( to: String, at: UInt16 ) -> Bool {
 		
 		socketfd = socket( AF_INET, SOCK_STREAM, 0 )		// ipv4, tcp
 
@@ -102,7 +102,7 @@ class Sender {
 		return connectResult
 	}
 	
-	func sendPi( _ message: String ) -> String {
+	public func sendPi( _ message: String ) -> String {
 		
 		let command = message + "\n"
 		guard socketConnected else { return "Socket is not connected" }

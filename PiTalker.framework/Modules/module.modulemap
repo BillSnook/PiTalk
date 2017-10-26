@@ -1,0 +1,11 @@
+framework module PiTalker {
+  umbrella header "PiTalker.h"
+
+  export *
+  module * { export * }
+}
+
+module PiTalker.Swift {
+    header "PiTalker-Swift.h"
+    requires objc
+}
