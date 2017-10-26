@@ -14,13 +14,19 @@ import PiTalker
 class ViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBOutlet weak var targetHostName: UITextField!
-	@IBOutlet weak var connectButton: UIButton!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var connectButton: UIButton!
 
 	@IBOutlet weak var commandView: UIView!
 	@IBOutlet weak var commandField: UITextField!
+	@IBOutlet weak var sendActivityIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var responseView: UITextView!
 	
+	@IBOutlet weak var okButton: UIButton!
+	@IBOutlet weak var helloButton: UIButton!
+	@IBOutlet weak var blinkButton: UIButton!
+	@IBOutlet weak var noblinkButton: UIButton!
+
 	let targetPort = Sender()
 	var isConnected = false
 	
@@ -39,6 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		view.addGestureRecognizer(tap)
 		
 		activityIndicator.stopAnimating()
+		sendActivityIndicator.stopAnimating()
 
 		INPreferences.requestSiriAuthorization() { (status) in
 			print( "\nSiri authorization status: \(status)\n")
@@ -93,47 +100,60 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBAction func okCmd(_ sender: UIButton) {
 		if isConnected {
-			let reply = targetPort.sendPi( "ok" )
-			print( "\nSent ok, got \(reply)" )
-			responseView.text = reply
+			commandSend( "ok" )
 		}
 	}
 	
 	@IBAction func helloCmd(_ sender: UIButton) {
 		if isConnected {
-			let reply = targetPort.sendPi( "hello" )
-			print( "\nSent hello, got \(reply)" )
-			responseView.text = reply
+			commandSend( "hello" )
 		}
 	}
 	
 	@IBAction func blinkCmd(_ sender: UIButton) {
 		if isConnected {
-			let reply = targetPort.sendPi( "blink" )
-			print( "\nSent blink, got \(reply)" )
-			responseView.text = reply
+			commandSend( "blink" )
 		}
 	}
 	
 	@IBAction func unblinkCmd(_ sender: UIButton) {
 		if isConnected {
-			let reply = targetPort.sendPi( "blinkstop" )
-			print( "\nSent blinkstop, got \(reply)" )
-			responseView.text = reply
+			commandSend( "blinkstop" )
 		}
 	}
 
-	
 	// MARK: - UITextFieldDelegate
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool  {	// called when 'return' key pressed. return NO to ignore.
 	
 		guard let commandString = textField.text else { return false }
-		let returnString = targetPort.sendPi( commandString )
-		responseView.text = returnString
 		textField.text = ""
 		textField.resignFirstResponder()
+		commandSend( commandString )
 		return true
 	}
 
+	func commandSend( _ msg: String ) {
+		sendActivityIndicator.startAnimating()
+		var reply = ""
+		responseView.text = reply
+		buttons( enable: false )
+		DispatchQueue.global( qos: .userInitiated ).async {
+			reply = self.targetPort.sendPi( msg )
+			DispatchQueue.main.async {
+				self.buttons( enable: true )
+				print( "\nSent \(msg), got \(reply)" )
+				self.responseView.text = reply
+				self.sendActivityIndicator.stopAnimating()
+			}
+		}
+	}
+	
+	func buttons( enable: Bool ) {
+		okButton.isEnabled = enable
+		helloButton.isEnabled = enable
+		blinkButton.isEnabled = enable
+		noblinkButton.isEnabled = enable
+	}
+	
 }
 

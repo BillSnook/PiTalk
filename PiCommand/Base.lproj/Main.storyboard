@@ -38,9 +38,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="HeH-hX-W8c">
-                                <rect key="frame" x="150" y="112" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="HeH-hX-W8c">
+                                <rect key="frame" x="148" y="112" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="LSM-Wf-BET"/>
+                                    <constraint firstAttribute="height" constant="20" id="phS-ig-d3V"/>
+                                </constraints>
+                                <color key="color" red="0.99607849000000004" green="0.66275082269999996" blue="0.040491491640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZm-FT-Iqh">
                                 <rect key="frame" x="184" y="100" width="120" height="44"/>
@@ -54,7 +58,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <state key="disabled">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="doConnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8xm-gW-g9S"/>
@@ -76,6 +80,14 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="LbX-1J-WkQ"/>
                                         </connections>
                                     </textField>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Dlj-kd-nj1">
+                                        <rect key="frame" x="260" y="14" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="KJD-7K-HJ0"/>
+                                            <constraint firstAttribute="width" constant="20" id="jtO-GO-1Jh"/>
+                                        </constraints>
+                                        <color key="color" red="0.99607849000000004" green="0.66275082269999996" blue="0.040491491640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                     <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a3Y-SW-aqC">
                                         <rect key="frame" x="0.0" y="48" width="288" height="160"/>
                                         <color key="backgroundColor" red="0.85646681339999997" green="0.85646681339999997" blue="0.85646681339999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,21 +97,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYr-22-KYY">
-                                        <rect key="frame" x="158" y="216" width="130" height="44"/>
-                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.49335106379999999" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="Leq-ec-wQV"/>
-                                            <constraint firstAttribute="width" constant="130" id="UF0-f5-4Wn"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="hello">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="helloCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2W-st-rnx"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hy0-Jk-S5S">
                                         <rect key="frame" x="0.0" y="216" width="130" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.49335106379999999" colorSpace="calibratedRGB"/>
@@ -111,23 +108,29 @@
                                         <state key="normal" title="ok">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="okCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pd4-0T-fse"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBm-WR-UZd">
-                                        <rect key="frame" x="158" y="274" width="130" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYr-22-KYY">
+                                        <rect key="frame" x="158" y="216" width="130" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.49335106379999999" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="Gv6-fM-LXT"/>
-                                            <constraint firstAttribute="width" constant="130" id="rpI-QN-ATh"/>
+                                            <constraint firstAttribute="height" constant="44" id="Leq-ec-wQV"/>
+                                            <constraint firstAttribute="width" constant="130" id="UF0-f5-4Wn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Unblink">
+                                        <state key="normal" title="hello">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <action selector="unblinkCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5QG-ok-aRe"/>
+                                            <action selector="helloCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2W-st-rnx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znA-Eg-zGp">
@@ -141,8 +144,29 @@
                                         <state key="normal" title="Blink">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="blinkCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTH-gZ-Idz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBm-WR-UZd">
+                                        <rect key="frame" x="158" y="274" width="130" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.49335106379999999" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Gv6-fM-LXT"/>
+                                            <constraint firstAttribute="width" constant="130" id="rpI-QN-ATh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Unblink">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="unblinkCmd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5QG-ok-aRe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -156,9 +180,11 @@
                                     <constraint firstItem="a3Y-SW-aqC" firstAttribute="top" secondItem="dOc-5X-U7O" secondAttribute="bottom" constant="8" id="T3M-wf-whV"/>
                                     <constraint firstAttribute="trailing" secondItem="a3Y-SW-aqC" secondAttribute="trailing" id="U8o-PW-0vK"/>
                                     <constraint firstItem="dOc-5X-U7O" firstAttribute="top" secondItem="5i1-fo-GY6" secondAttribute="top" constant="8" id="ZJd-CJ-F51"/>
+                                    <constraint firstItem="Dlj-kd-nj1" firstAttribute="trailing" secondItem="dOc-5X-U7O" secondAttribute="trailing" constant="-8" id="f7p-Cu-HX7"/>
                                     <constraint firstItem="Hy0-Jk-S5S" firstAttribute="top" secondItem="a3Y-SW-aqC" secondAttribute="bottom" constant="8" id="jU0-AW-FaZ"/>
                                     <constraint firstAttribute="trailing" secondItem="nYr-22-KYY" secondAttribute="trailing" id="lNb-3d-6X3"/>
                                     <constraint firstItem="znA-Eg-zGp" firstAttribute="top" secondItem="Hy0-Jk-S5S" secondAttribute="bottom" constant="14" id="np9-se-Nnr"/>
+                                    <constraint firstItem="Dlj-kd-nj1" firstAttribute="centerY" secondItem="dOc-5X-U7O" secondAttribute="centerY" id="nqq-pD-VDy"/>
                                     <constraint firstItem="nYr-22-KYY" firstAttribute="top" secondItem="a3Y-SW-aqC" secondAttribute="bottom" constant="8" id="olf-eY-vrS"/>
                                     <constraint firstItem="znA-Eg-zGp" firstAttribute="leading" secondItem="5i1-fo-GY6" secondAttribute="leading" id="qbF-V0-faw"/>
                                     <constraint firstItem="dOc-5X-U7O" firstAttribute="leading" secondItem="5i1-fo-GY6" secondAttribute="leading" id="rGO-Kk-Pj1"/>
@@ -170,6 +196,8 @@
                             <constraint firstItem="5i1-fo-GY6" firstAttribute="top" secondItem="QZm-FT-Iqh" secondAttribute="bottom" constant="16" id="4oj-qI-qLW"/>
                             <constraint firstItem="UeM-ac-0z5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8dI-vu-Rol"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5i1-fo-GY6" secondAttribute="trailing" constant="16" id="Cuy-dF-uzm"/>
+                            <constraint firstItem="HeH-hX-W8c" firstAttribute="top" secondItem="FDl-MO-9Kn" secondAttribute="bottom" constant="-26" id="Hb1-u9-qk2"/>
+                            <constraint firstItem="HeH-hX-W8c" firstAttribute="trailing" secondItem="FDl-MO-9Kn" secondAttribute="trailing" constant="-8" id="Jch-OD-0FP"/>
                             <constraint firstItem="FDl-MO-9Kn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PMj-yn-bbg"/>
                             <constraint firstItem="QZm-FT-Iqh" firstAttribute="top" secondItem="UeM-ac-0z5" secondAttribute="bottom" constant="14" id="Tv1-XE-vm5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QZm-FT-Iqh" secondAttribute="trailing" constant="16" id="WYk-vO-UVj"/>
@@ -183,10 +211,15 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="HeH-hX-W8c" id="M5t-Om-kCw"/>
+                        <outlet property="blinkButton" destination="znA-Eg-zGp" id="jH0-Si-5Ov"/>
                         <outlet property="commandField" destination="dOc-5X-U7O" id="lNt-H0-Tzk"/>
                         <outlet property="commandView" destination="5i1-fo-GY6" id="D3L-Qd-RNx"/>
                         <outlet property="connectButton" destination="QZm-FT-Iqh" id="TYW-uz-6V1"/>
+                        <outlet property="helloButton" destination="nYr-22-KYY" id="dp0-5V-MxZ"/>
+                        <outlet property="noblinkButton" destination="gBm-WR-UZd" id="YKx-ff-St9"/>
+                        <outlet property="okButton" destination="Hy0-Jk-S5S" id="4HV-b1-mcP"/>
                         <outlet property="responseView" destination="a3Y-SW-aqC" id="MD5-RS-DHV"/>
+                        <outlet property="sendActivityIndicator" destination="Dlj-kd-nj1" id="vs8-q0-X35"/>
                         <outlet property="targetHostName" destination="FDl-MO-9Kn" id="00q-n9-CTH"/>
                     </connections>
                 </viewController>
