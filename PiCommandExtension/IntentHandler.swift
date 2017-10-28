@@ -101,49 +101,41 @@ class IntentHandler: INExtension, INSendMessageIntentHandling {
 		if intent.recipients != nil && intent.content != nil {
 			var recips = [String]()
 			for recip in intent.recipients! {
-				recips.append( recip.displayName )
+				recips.append( recip.contactIdentifier! )	// Machine name
 			}
-			// Send the message.
-//            print( "Send message success" )
 			
-			let success = send( message: intent.content!, to: recips )
+			// Check content, may need help to be a recognized command
+			let success = send( intent.content!, to: recips[0] )
 //            let success = true // UCAccount.shared().sendMessage(intent.content, toRecipients: recips)
 			completion(INSendMessageIntentResponse(code: success ? .success : .failure, userActivity: nil))
-		}
-		else {
+		} else {
 			completion(INSendMessageIntentResponse(code: .failure, userActivity: nil))
 		}
 	}
 	
-	func send( message: String, to recipients: Array<String> ) -> Bool {
+	func send( _ message: String, to recipient: String ) -> Bool {
 		
-		let recipient = recipients[0]
-		
-//		let sendGreeting = "Hey \(recipient). \(message). please."
-//        print( "Send:" )
-//        print( "To: \(recipient)" )
-//        print( "Message: \(message)" )
-		
-//		let speechSynth = AVSpeechSynthesizer()
-//
-//		let speechUtt = AVSpeechUtterance( string: sendGreeting )
-//		speechUtt.pitchMultiplier = 1.2
-//		speechUtt.rate = AVSpeechUtteranceDefaultSpeechRate
-//		speechUtt.volume = 1.0
-//		speechUtt.postUtteranceDelay = 1.0
-//		speechUtt.voice = AVSpeechSynthesisVoice( language: "en-US" )
-//
-//		speechSynth.speak( speechUtt )
-		
+		var msg = message.lowercased()	// Siri sometimes capitalizes the first word
+		if msg.contains( "blink" ) {
+			msg = "blink"
+		} else if msg.contains( "stop" ) {
+			msg = "blinkstop"
+		} else if msg.contains( "ok" ) {
+			msg = "ok"
+		} else if msg.contains( "hello" ) {
+			msg = "hello"
+		} else {
+			msg = "unrecognized"
+		}
 		
 		let targetPort = Sender()
 		let result = targetPort.doMakeConnection( to: recipient, at: 5555 )
 		if result {
-			_ = targetPort.sendPi( message )
+			_ = targetPort.sendPi( msg )
 			targetPort.doBreakConnection()
 		}
 		
-		return true
+		return result
 	}
 	
 }

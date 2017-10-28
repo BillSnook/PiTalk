@@ -10,10 +10,10 @@ import Foundation
 
 struct ContactManager {
     
-    static let allContacts = [Contact(name: "Sylvia", nickName: "Sylvia", favorite: false),
-                       Contact(name: "Charles", nickName: "Charles", favorite: false),
-                       Contact(name: "Three", nickName: "Three", favorite: false),
-                       Contact(name: "Zero", nickName: "Zero", favorite: false)]
+    static let allContacts = [Contact(name: "Sylvia", nickName: "zerowpi2", favorite: false),
+                       Contact(name: "Bob", nickName: "Bob", favorite: false),
+                       Contact(name: "Zero", nickName: "zerowpi2", favorite: false),
+                       Contact(name: "Venus", nickName: "mofopi", favorite: false)]
     
     static func matching( _ name: String ) -> Array<Contact> {
         

@@ -16,7 +16,6 @@
 		A9EDF2061F9F91430020F3F5 /* PiCommandExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9EDF1FE1F9F91430020F3F5 /* PiCommandExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A9EDF20D1F9F92100020F3F5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF20B1F9F92100020F3F5 /* Contact.swift */; };
 		A9EDF20E1F9F92100020F3F5 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF20C1F9F92100020F3F5 /* ContactManager.swift */; };
-		A9EDF2111F9F92970020F3F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */; };
 		A9EDF27E1FA156F30020F3F5 /* PiTalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */; };
 		A9EDF27F1FA156F30020F3F5 /* PiTalker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9EDF2821FA273F10020F3F5 /* PiTalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF2831FA273F10020F3F5 /* PiTalker.framework */; };
@@ -71,7 +70,6 @@
 		A9EDF20A1F9F91690020F3F5 /* PiCommand.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PiCommand.entitlements; sourceTree = "<group>"; };
 		A9EDF20B1F9F92100020F3F5 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		A9EDF20C1F9F92100020F3F5 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
-		A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PiTalker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EDF2831FA273F10020F3F5 /* PiTalker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PiTalker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,7 +88,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9EDF2821FA273F10020F3F5 /* PiTalker.framework in Frameworks */,
-				A9EDF2111F9F92970020F3F5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				A9EDF2831FA273F10020F3F5 /* PiTalker.framework */,
-				A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -353,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -405,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -423,7 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D84KDEPN2N;
 				INFOPLIST_FILE = "$(SRCROOT)/PiCommand/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiCommand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,7 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D84KDEPN2N;
 				INFOPLIST_FILE = "$(SRCROOT)/PiCommand/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiCommand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,7 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D84KDEPN2N;
 				INFOPLIST_FILE = PiCommandExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiCommand.PiCommandExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -472,7 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D84KDEPN2N;
 				INFOPLIST_FILE = PiCommandExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.billsnook.test.PiCommand.PiCommandExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
