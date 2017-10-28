@@ -19,6 +19,7 @@
 		A9EDF2111F9F92970020F3F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */; };
 		A9EDF27E1FA156F30020F3F5 /* PiTalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */; };
 		A9EDF27F1FA156F30020F3F5 /* PiTalker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9EDF2821FA273F10020F3F5 /* PiTalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EDF2831FA273F10020F3F5 /* PiTalker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,6 @@
 		A9187F4F1F8EA4BC00E2CE4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9187F521F8EA4BC00E2CE4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9187F541F8EA4BC00E2CE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		A9EDF1FE1F9F91430020F3F5 /* PiCommandExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PiCommandExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EDF2001F9F91430020F3F5 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		A9EDF2021F9F91430020F3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +73,7 @@
 		A9EDF20C1F9F92100020F3F5 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A9EDF27D1FA156F30020F3F5 /* PiTalker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PiTalker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9EDF2831FA273F10020F3F5 /* PiTalker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PiTalker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9EDF2821FA273F10020F3F5 /* PiTalker.framework in Frameworks */,
 				A9EDF2111F9F92970020F3F5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,7 +123,6 @@
 				A9EDF20A1F9F91690020F3F5 /* PiCommand.entitlements */,
 				A9187F481F8EA4BC00E2CE4C /* AppDelegate.swift */,
 				A9187F4A1F8EA4BC00E2CE4C /* ViewController.swift */,
-				A9187F5C1F8EB0BB00E2CE4C /* Sender.swift */,
 				A9187F4C1F8EA4BC00E2CE4C /* Main.storyboard */,
 				A9187F4F1F8EA4BC00E2CE4C /* Assets.xcassets */,
 				A9187F511F8EA4BC00E2CE4C /* LaunchScreen.storyboard */,
@@ -144,6 +145,7 @@
 		A9EDF20F1F9F92910020F3F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9EDF2831FA273F10020F3F5 /* PiTalker.framework */,
 				A9EDF2101F9F92920020F3F5 /* AVFoundation.framework */,
 			);
 			name = Frameworks;

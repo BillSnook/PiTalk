@@ -9,6 +9,8 @@
 import Intents
 import AVFoundation
 
+import PiTalker
+
 // As an example, this class is set up to handle Message intents.
 // You will want to replace this or add other intents as appropriate.
 // The intents you wish to handle must be declared in the extension's Info.plist.
@@ -116,21 +118,30 @@ class IntentHandler: INExtension, INSendMessageIntentHandling {
 	func send( message: String, to recipients: Array<String> ) -> Bool {
 		
 		let recipient = recipients[0]
-		let sendGreeting = "Hey \(recipient). \(message). please."
+		
+//		let sendGreeting = "Hey \(recipient). \(message). please."
 //        print( "Send:" )
 //        print( "To: \(recipient)" )
 //        print( "Message: \(message)" )
 		
-		let speechSynth = AVSpeechSynthesizer()
+//		let speechSynth = AVSpeechSynthesizer()
+//
+//		let speechUtt = AVSpeechUtterance( string: sendGreeting )
+//		speechUtt.pitchMultiplier = 1.2
+//		speechUtt.rate = AVSpeechUtteranceDefaultSpeechRate
+//		speechUtt.volume = 1.0
+//		speechUtt.postUtteranceDelay = 1.0
+//		speechUtt.voice = AVSpeechSynthesisVoice( language: "en-US" )
+//
+//		speechSynth.speak( speechUtt )
 		
-		let speechUtt = AVSpeechUtterance( string: sendGreeting )
-		speechUtt.pitchMultiplier = 1.2
-		speechUtt.rate = AVSpeechUtteranceDefaultSpeechRate
-		speechUtt.volume = 1.0
-		speechUtt.postUtteranceDelay = 1.0
-		speechUtt.voice = AVSpeechSynthesisVoice( language: "en-US" )
 		
-		speechSynth.speak( speechUtt )
+		let targetPort = Sender()
+		let result = targetPort.doMakeConnection( to: recipient, at: 5555 )
+		if result {
+			_ = targetPort.sendPi( message )
+			targetPort.doBreakConnection()
+		}
 		
 		return true
 	}
